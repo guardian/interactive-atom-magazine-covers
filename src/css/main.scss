@@ -11,3 +11,62 @@
 .interactive-atom {
     margin: 0 !important;
 }
+.gv-slice{
+	margin-bottom:60px;
+}
+.gv-slice-inner{
+	max-width: 620px;
+
+	@include mq(leftCol){
+		margin-left:160px;
+	}
+	
+	@include mq(wide){
+		margin-left:240px;
+	}
+}
+
+.gv-img-grid{
+	position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    width:100%;
+    font-size: 0px !important;
+}
+
+
+.gv-img-holder{
+	position: relative;
+	display:inline-block;
+  	// float: left;
+    //border-bottom: 1px solid #444;
+    width:105px;	
+    height:138px;   
+}
+
+[class*=' sprite-']{ 
+	background-image:url('<%= path %>/assets/vogue-Sprite.jpg');  
+}
+
+.gv-img{
+	display: block;
+    position: relative;
+    overflow: hidden;
+    margin:5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+	
+	background-repeat: no-repeat; 
+    // &.white:before{
+    // 	background: #FFF;
+
+    	
+    // }
+    &.white{
+    	//content:'';    	
+    	// margin:5px;
+    	// width: calc(100% - 10px);
+    	// height: calc(100% - 10px);
+    	background-color: #FA0;
+    }
+}

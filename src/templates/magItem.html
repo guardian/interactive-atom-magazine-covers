@@ -1,20 +1,21 @@
-<div class="interactive">
-		<div class="gv-slice" id="mainView">
-		<!-- <div class="gv-slice-header">
+
+<div class="gv-slice" id="mainView">
+	<div class="gv-slice-header">
 			<div class="gv-slice-inner">
-				<h3>Head here</h3>
+				<h2>{{{Title}}}</h2>
 				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 			</div>	
-		</div> -->
-
-		
-		
-			
-		{{#each magsData}} 
-	       {{> magItem }}
-	     {{/each}} 
+		</div>
 
 	
-
-	</div>	
+	<div class="gv-img-grid">
+	{{#each monthsArr}} 
+	       {{> gridPic }}
+	 {{/each}} 
+	</div>
 </div>
+		
+
+		<!-- <div class="gv-slice-header">
+			
+		</div> -->
