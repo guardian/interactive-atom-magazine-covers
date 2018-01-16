@@ -40,21 +40,31 @@
 	display:inline-block;
   	// float: left;
     //border-bottom: 1px solid #444;
-    width:105px;	
-    height:138px;   
+    width:60px;    
+    height:80px;
+
+    @include mq(tablet){
+        width:105px;	
+        height:140px;   
+    }
 }
 
 [class*=' sprite-']{ 
-	background-image:url('<%= path %>/assets/vogue-Sprite.jpg');  
+    background-image:url('<%= path %>/assets/mags-smallSprite.jpg'); 
+    -webkit-filter: contrast(1.25) grayscale(0.95) brightness(1.1); 
+    @include mq(tablet){
+        background-image:url('<%= path %>/assets/spritesLarge.jpg');  
+    }
+	
 }
 
 .gv-img{
 	display: block;
     position: relative;
     overflow: hidden;
-    margin:5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    // margin:5px;
+    width: 100%;
+    height: 100%;
 	
 	background-repeat: no-repeat; 
     // &.white:before{

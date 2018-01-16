@@ -76,8 +76,8 @@ function sortByKeys(obj) {
         t.objArr.months.map(function(month,n) {
         	console.log(n * 9.1)
         	var monthObj = {};
-        	monthObj.desktopOffsetTop = n * 8.333; //percentage
-        	monthObj.desktopOffsetLeft = i * 105;
+        	monthObj.desktopOffsetTop = i * 5.26; //percentage
+        	monthObj.desktopOffsetLeft = n * 9.1; //percentage
         	monthObj.personColor = month.toLowerCase();
         	console.log(month);
         	t.monthsArr.push(monthObj)
