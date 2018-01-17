@@ -1,26 +1,82 @@
 @import "mq";
 @import "fonts";
 
+$hl-color:#FFCC00;
+$white-color: #CCC;
+$black-color: $hl-color;
+$asian-color: $hl-color; //rgb(0,132,198);
+$latino-color: $hl-color; //rgb(187, 59, 128);
+
 // Uncomment for embeds
 //@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+    min-height:900px;
+
+    // h2{
+    //     line-height: 32px;
+    //     border-top: 1px dotted #DDD;
+    // }
+
+    // h2:first-of-type{ 
+    //     margin-top:12px;
+    //     border-top: none;
+    // }
+
+
+    // h3{
+    //     font-weight:normal;
+    //     font-family: 'Guardian Text Sans Web', 'Helvetica', Arial, sans-serif;
+    //     font-size: 14px;
+    //     line-height: 14px;    
+    //     margin-bottom: 6px;
+        
+    // }
+
+    h3.slice-head {
+        font-size: 22px;
+        line-height: 28px;
+        font-family: "Guardian Egyptian Web", Georgia, serif;
+        font-weight: 900;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3.slice-subhead {
+        padding-bottom: 4px;
+        padding-top: 0;
+        font-size: 16px;
+        line-height: 16px;
+        font-family: "Guardian Egyptian Web", Georgia, serif;
+        font-weight: 300;
+    }
+
 }
 .gv-slice{
-	margin-bottom:60px;
+	margin-bottom:24px;
+
+
+    @include mq(tablet){
+       margin-bottom:48px; 
+    }
+
+    @include mq(desktop){
+       margin-bottom:60px; 
+    }
 }
+
 .gv-slice-inner{
 	max-width: 620px;
 
 	@include mq(leftCol){
 		margin-left:160px;
-	}
-	
+	}	
 	@include mq(wide){
 		margin-left:240px;
 	}
@@ -45,7 +101,7 @@
 
     @include mq(tablet){
         width:100px;	
-        height:139px;   
+        height:140px;   
     }
 
     border:2px solid white;
@@ -73,6 +129,10 @@
     //     background-color:#FFCC00;
         
     //  }
+
+    &.no-color{
+        display:none;
+    }
 }
 
 [class*=' sprite-']{ 
@@ -84,7 +144,7 @@
     }
 
     &.white, &.no-color{
-        -webkit-filter: contrast(1.2) grayscale(1) brightness(1.1); 
+        -webkit-filter: contrast(0.6) grayscale(0.6) brightness(0.7);
     }
 
     &:after{
@@ -92,9 +152,13 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 94px;
-        height: 133px;
+        width: 54px;
+        height: 74px;
         border: 3px solid white;
+        @include mq(tablet){
+            width: 94px;
+            height: 134px;
+        }
     }
 
     &.black:after, &.latino:after, &.asian:after, &.white-black:after{
@@ -102,13 +166,39 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 94px;
-        height: 133px;
-        border: 3px solid red;
+        border: 3px solid $black-color;
     }
 
+    &.latino:after{
+        border: 3px solid $latino-color;
+    } 
+    &.asian:after{
+        border: 3px solid $asian-color;
+    }  
 
+
+    &.no-color{
+        background-image:none;
+        width:0;
+    }
 	
+}
+
+.gv-copy{
+    &.white{
+        color: $white-color;
+    }
+    &.black{
+        color: $black-color;
+    }
+
+    &.asian{
+        color: $asian-color;
+    }
+    &.latino{
+        color: $latino-color;
+    }
+
 }
 
 .gv-img{
@@ -131,7 +221,7 @@
     	// width: calc(100% - 10px);
     	// height: calc(100% - 10px);
         // filter: saturate(0.3);
-    	background-color: #FA0;
+    	//background-color: #FA0;
     }   
 
     
@@ -145,3 +235,72 @@
      //    filter: saturate(1);
      // }
 }
+
+.gv-bar-chart{
+    width:100%;
+    margin: 0 0 18px 0;
+    max-width:382px;
+    @include mq(tablet){
+        max-width:620px;
+    }
+}
+
+
+.gv-bar-holder {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    margin-bottom:3px;
+
+    &.white{
+        background: rgba($white-color, 0.25);
+    }
+
+    &.black{
+        background: rgba($black-color, 0.25);
+    }
+
+    &.asian{
+        background: rgba($asian-color, 0.25);
+    }
+
+    &.latino{
+        background: rgba($latino-color, 0.25);
+    }
+    
+}
+
+.gv-total {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: rgba(231, 231, 231, 0.75);
+
+    &.white{
+        background: rgba($white-color, 0.75);
+    }
+
+    &.black{
+        background: rgba($black-color, 0.75);
+    }
+
+    &.asian{
+        background: rgba($asian-color, 0.75);
+    }
+
+    &.latino{
+        background: rgba($latino-color, 0.75);
+    }
+
+
+
+}
+
+.gv-bar-cap {
+    font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
