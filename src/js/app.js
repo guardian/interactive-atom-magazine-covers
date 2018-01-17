@@ -13,25 +13,25 @@ fetch(`${process.env.PATH}/assets/data/mags.json`).then(resp => resp.json())
 });
 
 const spriteSlots = [
-{title:"Cosmopolitan",slot:1},
-{title:"Elle (U.K.)",slot:2},
-{title:"Glamour",slot:3},
-{title:"Good Housekeeping",slot:4},
-{title:"GQ",slot:5},
-{title:"HELLO! Fashion Monthly",slot:6},
-{title:"HomeStyle",slot:7},
-{title:"Living etc",slot:8},
-{title:"Marie Claire",slot:9},
-{title:"Men's Health",slot:10},
-{title:"Prima",slot:11},
-{title:"Red",slot:12},
-{title:"Slimming World Magazine",slot:13},
-{title:"Take a Break Special",slot:14},
-{title:"Vogue",slot:15},
-{title:"Weight watchers Magazine",slot:16},
-{title:"Woman & Home",slot:17},
-{title:"Women's Health",slot:18},
-{title:"Your Home",slot:19}
+{title:"Cosmopolitan",slot:1,publisher:"Hearst"},
+{title:"Elle (U.K.)",slot:2,publisher:"Hearst"},
+{title:"Glamour",slot:3,publisher:"Conde Nast"},
+{title:"Good Housekeeping",slot:4,publisher:"Hearst"},
+{title:"GQ",slot:5,publisher:"Conde Nast"},
+{title:"HELLO! Fashion Monthly",slot:6,publisher:"Hello Magazine"},
+{title:"HomeStyle",slot:7,publisher:"Hubert Burda Media"},
+{title:"Living etc",slot:8,publisher:"Time Inc UK"},
+{title:"Marie Claire",slot:9,publisher:"Time Inc UK"},
+{title:"Men's Health",slot:10,publisher:"Hearst"},
+{title:"Prima",slot:11,publisher:"Hearst"},
+{title:"Red",slot:12,publisher:"Hearst"},
+{title:"Slimming World Magazine",slot:13,publisher:"Slimming World"},
+{title:"Take a Break Special",slot:14,publisher:"Bauer"},
+{title:"Vogue",slot:15,publisher:"Conde Nast"},
+{title:"Weight watchers Magazine",slot:16,publisher:"Seven Publishing Group"},
+{title:"Woman & Home",slot:17,publisher:"Time Inc UK"},
+{title:"Women's Health",slot:18,publisher:"Hearst"},
+{title:"Your Home",slot:19,publisher:"Hubert Burda Media"}
 ];
 
 function getData(arr){
@@ -93,11 +93,18 @@ function sortByKeys(obj) {
         t.Title = t.objArr.Title;
         t.monthsArr = [];
         t.sortTitle = removeWhitespace(t.objArr.Title);
+        t.coversPeopleTotal = t.objArr['Total covers with people'];
+        t.coversW = Number(t.objArr['Total white']);
+        t.coversB = Number(t.objArr['Total Black']);
+        t.coversA = Number(t.objArr['Total asian']);
+        t.coversL = Number(t.objArr['Total Latino']);
+
 
         spriteSlots.map(function(mag) {
             
             if (mag.title == t.Title){
                 t.spriteSlot = mag.slot - 1;
+                t.publisher = mag.publisher;
             }
         })
       
