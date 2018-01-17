@@ -12,6 +12,28 @@ fetch(`${process.env.PATH}/assets/data/mags.json`).then(resp => resp.json())
 		
 });
 
+const spriteSlots = [
+{title:"Cosmopolitan",slot:1},
+{title:"Elle (U.K.)",slot:2},
+{title:"Glamour",slot:3},
+{title:"Good Housekeeping",slot:4},
+{title:"GQ",slot:5},
+{title:"HELLO! Fashion Monthly",slot:6},
+{title:"HomeStyle",slot:7},
+{title:"Living etc",slot:8},
+{title:"Marie Claire",slot:9},
+{title:"Men's Health",slot:10},
+{title:"Prima",slot:11},
+{title:"Red",slot:12},
+{title:"Slimming World Magazine",slot:13},
+{title:"Take a Break Special",slot:14},
+{title:"Vogue",slot:15},
+{title:"Weight watchers Magazine",slot:16},
+{title:"Woman & Home",slot:17},
+{title:"Women's Health",slot:18},
+{title:"Your Home",slot:19}
+];
+
 function getData(arr){
 	
 	var newObj = {};
@@ -20,7 +42,6 @@ function getData(arr){
 	  if(mag.Rank){
 	  	mag.keyRef = i;
 	  	mag.months= [mag['January 2017'],mag['February 2017'],mag['March 2017'],mag['April 2017'],mag['May 2017'],mag['June 2017'],mag['July 2017'],mag['August 2017'],mag['September 2017'],mag['October 2017'],mag['November 2017'],mag['December 2017']]
-
 	  	magsArr.push(mag);
 	  }
 	});
@@ -72,14 +93,21 @@ function sortByKeys(obj) {
         t.Title = t.objArr.Title;
         t.monthsArr = [];
         t.sortTitle = removeWhitespace(t.objArr.Title);
+
+        spriteSlots.map(function(mag) {
+            
+            if (mag.title == t.Title){
+                t.spriteSlot = mag.slot - 1;
+            }
+        })
       
         t.objArr.months.map(function(month,n) {
         	console.log(n * 9.1)
         	var monthObj = {};
-        	monthObj.desktopOffsetTop = i * 5.26; //percentage
+        	monthObj.desktopOffsetTop = t.spriteSlot * 5.265; //percentage
         	monthObj.desktopOffsetLeft = n * 9.1; //percentage
-        	monthObj.personColor = month.toLowerCase();
-        	console.log(month);
+        	monthObj.personColor = month.split("/").join("-").toLowerCase();
+            if(monthObj.personColor=="-"){ monthObj.personColor="no-color" } ;
         	t.monthsArr.push(monthObj)
 
         });
