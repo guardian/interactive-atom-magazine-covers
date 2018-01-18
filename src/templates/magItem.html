@@ -1,75 +1,9 @@
 
-<div class="gv-slice" id="mainView">
-	<div class="gv-slice-header">
 
-			<div class="gv-slice-inner">
-				<h3 class="slice-head">{{{Title}}}</h3>
-				<h4 class="slice-subhead">Publisher: {{{publisher}}}, UK sales rank: {{{magRank}}}</h4>
-				<div class="gv-bar-chart">
-					{{#if pcB}}
-					<div class="gv-bar-cap">
-					{{{strB}}}
-					</div>
-					<div class="gv-bar-holder black">
-						<div class="gv-total black" style="width: {{{pcB}}}%;"></div>
-					</div>
-					{{/if}}
-
-
-					{{#if pcA}}
-					<div class="gv-bar-cap">
-					{{{strA}}}
-					</div>
-					<div class="gv-bar-holder asian">
-						<div class="gv-total asian" style="width: {{{pcA}}}%;"></div>
-					</div>	
-					{{/if}}
-
-
-					{{#if pcL}}
-					<div class="gv-bar-cap">
-					{{{strL}}}
-					</div>
-					<div class="gv-bar-holder latino">
-						<div class="gv-total latino" style="width: {{{pcL}}}%;"></div>
-					</div>
-					{{/if}}
-
-					{{#if pcW}}
-					<div class="gv-bar-cap">
-					{{{strW}}}
-					</div>
-					<div class="gv-bar-holder white">
-						<div class="gv-total white" style="width: {{{pcW}}}%;"></div>
-					</div>
-					{{/if}}
-				</div>	
-				<!-- <p>Out of {{{coversPeopleTotal}}} covers showing a person or people: there <span class="gv-copy black">{{{strB}}}</span>; <span class="gv-copy asian">{{{strA}}}</span>; <span class="gv-copy latino">{{{strL}}}</span> and <span class="gv-copy white">{{{strW}}}</span>.</p>  -->
-			
-				
-
-
-
-			</div>
-
-
-		</div>
-
-	
-	<div class="gv-img-grid">
 	{{#each monthsArr}} 
 	       {{> gridPic }}
 	 {{/each}} 
-	</div>
-
-
 	
-
-		
-	
-
-
-</div>
 		
 
 		<!-- <div class="gv-slice-header">

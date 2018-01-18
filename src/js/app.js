@@ -9,7 +9,11 @@ fetch(`${process.env.PATH}/assets/data/mags.json`).then(resp => resp.json())
 		const a = getData(arr);
 		var compiledHTML = compileHTML(a);
 		document.querySelector("#mainView").innerHTML = compiledHTML;
-		
+
+        //add this line to force height for embeds in composer (after HTML has been injected)
+        window.resize();
+
+        addListeners();
 });
 
 const spriteSlots = [
@@ -138,6 +142,26 @@ function sortByKeys(obj) {
     return a;
 }
 
+
+function addListeners(){
+    document.querySelector('.expand-btn').addEventListener('click', function () {
+
+        document.querySelector('.gv-div-wrapper').classList.remove('collapsed');
+        this.style.display = "none";
+        window.resize();
+  
+  // if (this.classList.contains('bad')) {
+  //   // The box that we clicked has a class of bad so let's remove it and add the good class
+  //  this.classList.remove('bad');
+  //  this.classList.add('good');
+  // } else {
+  //   // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
+  //   alert("You can proceed!");
+  // }
+        });
+}
+
+
 function getPc(n, s){
     var unit = 100/12;
     return n * unit;
@@ -195,3 +219,5 @@ function removeWhitespace(s){
 	return o;
 
 }
+
+

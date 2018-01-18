@@ -4,20 +4,22 @@
 $hl-color:#FFCC00;
 $white-color: #CCC;
 $black-color: $hl-color;
-$asian-color: $hl-color; //rgb(0,132,198);
-$latino-color: $hl-color; //rgb(187, 59, 128);
+$asian-color: $hl-color; 
+$latino-color: $hl-color;
 
-// Uncomment for embeds
-//@import "embed";
+//Uncomment for embeds
+@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
+
 
 
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
     min-height:900px;
+
 
     // h2{
     //     line-height: 32px;
@@ -59,16 +61,7 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
 
 }
 .gv-slice{
-	margin-bottom:24px;
-
-
-    @include mq(tablet){
-       margin-bottom:48px; 
-    }
-
-    @include mq(desktop){
-       margin-bottom:60px; 
-    }
+	
 }
 
 .gv-slice-inner{
@@ -88,6 +81,7 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
     padding: 0 !important;
     width:100%;
     font-size: 0px !important;
+    line-height: 0 !important;
 }
 
 
@@ -96,13 +90,8 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
 	display:inline-block;
   	// float: left;
     //border-bottom: 1px solid #444;
-    width:60px;    
+    width:58px;    
     height:80px;
-
-    @include mq(tablet){
-        width:100px;	
-        height:140px;   
-    }
 
     border:2px solid white;
 
@@ -139,10 +128,7 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
     background-image:url('<%= path %>/assets/spritesSmall.jpg'); 
     // filter: saturate(1);
     //-webkit-filter: contrast(0.8) grayscale(0.2) brightness(1.1); 
-    @include mq(tablet){
-        background-image:url('<%= path %>/assets/spritesLarge.jpg');  
-    }
-
+    
     &.white, &.no-color{
         -webkit-filter: contrast(0.6) grayscale(0.6) brightness(0.7);
     }
@@ -152,7 +138,7 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
         position: absolute;
         top: 0;
         left: 0;
-        width: 54px;
+        width: 52px;
         height: 74px;
         border: 3px solid white;
         @include mq(tablet){
@@ -303,4 +289,61 @@ $latino-color: $hl-color; //rgb(187, 59, 128);
     line-height: 20px;
     font-weight: 600;
 }
+
+
+.gv-div-wrapper {
+
+  &.collapsed {
+
+    overflow: hidden;
+    margin-bottom: 40px;
+    height: 430px;
+
+    @include mq(embedThreeEighty){
+      height: 435px;
+    }
+
+    @include mq(embedSixTwenty){
+          height: 615px;
+    }
+
+  }
+}
+
+.expand-btn {
+    height:30px;
+    width: 110px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    margin-top:6px;
+    padding: 0 15px 0 7px;
+    border-radius: 50px;
+    cursor: pointer;
+    border:none !important;
+}
+
+.gv-icon--plus{
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    svg {
+        fill:#FFF;
+    }
+}
+
+.gv-button-label{
+    position: absolute;
+    height: 12px;
+    width: 80px;
+    top: 9px;
+    left: 24px;
+    color: #fff;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 13px;
+    font-weight:700px;
+}
+
+textarea, input, button { outline: none; }
+
 
