@@ -88,10 +88,9 @@ $latino-color: $hl-color;
 .gv-img-holder{
 	position: relative;
 	display:inline-block;
-  	// float: left;
-    //border-bottom: 1px solid #444;
-    width:58px;    
-    height:80px;
+
+    width:55px;    
+    height:76px;
 
     border:2px solid white;
 
@@ -138,8 +137,8 @@ $latino-color: $hl-color;
         position: absolute;
         top: 0;
         left: 0;
-        width: 52px;
-        height: 74px;
+        width: 49px;
+        height: 70px;
         border: 3px solid white;
         @include mq(tablet){
             width: 94px;
