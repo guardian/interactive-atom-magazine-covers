@@ -38,12 +38,14 @@ const spriteSlots = [
 {title:"Your Home",slot:19,publisher:"Hubert Burda Media"}
 ];
 
+const genderFilter = "F";
+
 function getData(arr){
 	
 	var newObj = {};
 	var magsArr = [];
 	arr.map(function(mag,i) {
-	  if(mag.Rank){
+	  if(mag.Rank && mag.Gender == genderFilter){
 	  	mag.keyRef = i;
 	  	mag.months= [mag['January 2017'],mag['February 2017'],mag['March 2017'],mag['April 2017'],mag['May 2017'],mag['June 2017'],mag['July 2017'],mag['August 2017'],mag['September 2017'],mag['October 2017'],mag['November 2017'],mag['December 2017']]
 	  	magsArr.push(mag);
@@ -144,6 +146,12 @@ function sortByKeys(obj) {
 
 
 function addListeners(){
+    if ( genderFilter!="F" ){
+         document.querySelector('.gv-div-wrapper').classList.remove('collapsed');
+         document.querySelector('.expand-btn').style.display = "none";
+         window.resize();
+    }
+
     document.querySelector('.expand-btn').addEventListener('click', function () {
 
         document.querySelector('.gv-div-wrapper').classList.remove('collapsed');
