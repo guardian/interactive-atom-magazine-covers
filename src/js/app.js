@@ -38,7 +38,7 @@ const spriteSlots = [
 {title:"Your Home",slot:19,publisher:"Hubert Burda Media"}
 ];
 
-const genderFilter = "F";
+const genderFilter = "M";
 
 function getData(arr){
 	
@@ -46,6 +46,7 @@ function getData(arr){
 	var magsArr = [];
 	arr.map(function(mag,i) {
 	  if(mag.Rank && mag.Gender == genderFilter){
+        console.log(mag);
 	  	mag.keyRef = i;
 	  	mag.months= [mag['January 2017'],mag['February 2017'],mag['March 2017'],mag['April 2017'],mag['May 2017'],mag['June 2017'],mag['July 2017'],mag['August 2017'],mag['September 2017'],mag['October 2017'],mag['November 2017'],mag['December 2017']]
 	  	magsArr.push(mag);

@@ -13,6 +13,20 @@ $latino-color: $hl-color;
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+h3,h4,h5,h6{
+
+    margin: 0 !important;
+    -webkit-margin-before: 0 !important;
+    -webkit-margin-after: 0 !important;
+    -webkit-margin-start: 0 !important;
+    -webkit-margin-end: 0 !important;
+    font-family: 'Guardian Text Sans Web', 'Helvetica', Arial, sans-serif !important;
+    font-weight: normal !important;
+    font-size: 12px  !important;
+    line-height: 14px  !important;
+    color:#999;
+
+}
 
 
 .element-atom,
@@ -31,37 +45,34 @@ $latino-color: $hl-color;
     //     border-top: none;
     // }
 
-
     // h3{
     //     font-weight:normal;
     //     font-family: 'Guardian Text Sans Web', 'Helvetica', Arial, sans-serif;
     //     font-size: 14px;
     //     line-height: 14px;    
-    //     margin-bottom: 6px;
-        
+    //     margin-bottom: 6px;        
     // }
 
-    h3.slice-head {
-        font-size: 22px;
-        line-height: 28px;
-        font-family: "Guardian Egyptian Web", Georgia, serif;
-        font-weight: 900;
-        margin: 0;
-        padding: 0;
+    .slice-head  h3{
+        font-size: 14px !important;
+        line-height: 16px  !important;
+
     }
 
-    h3.slice-subhead {
+   .slice-subhead h4{
         padding-bottom: 4px;
         padding-top: 0;
-        font-size: 16px;
-        line-height: 16px;
-        font-family: "Guardian Egyptian Web", Georgia, serif;
-        font-weight: 300;
+        color:#999;
+        
     }
 
+
+
 }
-.gv-slice{
-	
+.mag-slice{
+        margin-top:6px;
+        padding-top:3px;
+        border-top:1px dotted #CCC;
 }
 
 .gv-slice-inner{
@@ -92,14 +103,20 @@ $latino-color: $hl-color;
     width:55px;    
     height:76px;
 
+    @include mq(mobileLandscape){
+        width:100px;    
+        height:138px;
+    }
+
+
     @include mq(tablet){
 
-        width:70px;    
-        height:95px;
+        width:69px;    
+        height:94px;
 
     }
 
-    // border:1px solid white;
+   border:1px solid white;
 
     // &.white:after{
     //     content:'';
@@ -147,7 +164,18 @@ $latino-color: $hl-color;
         width: 49px;
         height: 70px;
         border: 3px solid white;
+
+        @include mq(mobileLandscape){
+            width: 94px;
+            height: 132px;
+        }
+
         @include mq(tablet){
+            width: 63px;
+            height: 88px;
+        }
+
+        @include mq(leftCol){
             width: 94px;
             height: 134px;
         }
@@ -173,7 +201,14 @@ $latino-color: $hl-color;
         background-image:none;
         width:0;
     }
-	
+
+    @include mq(mobileLandscape){
+        background-image:url('<%= path %>/assets/spritesLarge.jpg'); 
+    }
+
+    @include mq(tablet){
+        background-image:url('<%= path %>/assets/spritesMed.jpg'); 
+    }	
 }
 
 .gv-copy{
@@ -310,7 +345,7 @@ $latino-color: $hl-color;
     }
 
     @include mq(embedSixTwenty){
-          height: 615px;
+          height: 560px;
     }
 
   }
