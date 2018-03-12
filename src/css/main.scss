@@ -1,7 +1,7 @@
 @import "mq";
 @import "fonts";
 
-$hl-color:#FFCC00;
+$hl-color:#bb3b80;
 $white-color: #CCC;
 $black-color: $hl-color;
 $asian-color: $hl-color; 
@@ -92,7 +92,14 @@ $latino-color: $hl-color;
     width:55px;    
     height:76px;
 
-    border:2px solid white;
+    @include mq(tablet){
+
+        width:70px;    
+        height:95px;
+
+    }
+
+    // border:1px solid white;
 
     // &.white:after{
     //     content:'';
