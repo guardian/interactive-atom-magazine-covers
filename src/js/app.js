@@ -4,17 +4,8 @@ import mainTemplate from '../templates/main.html'
 import magItemTemplate from '../templates/magItem.html'
 import gridPicTemplate from '../templates/gridPic.html'
 
-fetch(`${process.env.PATH}/assets/data/mags.json`).then(resp => resp.json())
-.then(arr => {
-		const a = getData(arr);
-		var compiledHTML = compileHTML(a);
-		document.querySelector("#mainView").innerHTML = compiledHTML;
-
-        //add this line to force height for embeds in composer (after HTML has been injected)
-        window.resize();
-
-        addListeners();
-});
+// change this genderFilter = "M", config url and h2 in main.html for female/male
+const genderFilter = "M";
 
 const spriteSlots = [
 {title:"Cosmopolitan",slot:1,publisher:"Hearst"},
@@ -38,7 +29,18 @@ const spriteSlots = [
 {title:"Your Home",slot:19,publisher:"Hubert Burda Media"}
 ];
 
-const genderFilter = "M";
+fetch(`${process.env.PATH}/assets/data/mags.json`).then(resp => resp.json())
+.then(arr => {
+		const a = getData(arr);
+		var compiledHTML = compileHTML(a);
+		document.querySelector("#mainView").innerHTML = compiledHTML;
+
+        //add this line to force height for embeds in composer (after HTML has been injected)
+        window.resize();
+
+        addListeners();
+});
+
 
 function getData(arr){
 	
