@@ -205,13 +205,13 @@ h2 {
         top: 0;
         left: 0;
         background-color: none !important; 
-        border: 3px solid $black-color;
+        // border: 3px solid $black-color;
     }
     &.latino:after {
-        border: 3px solid $latino-color;
+        // border: 3px solid $latino-color;
     }
     &.asian:after {
-        border: 3px solid $asian-color;
+        // border: 3px solid $asian-color;
     }
     &.no-color {
         background-image: none;

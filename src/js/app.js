@@ -5,7 +5,7 @@ import magItemTemplate from '../templates/magItem.html'
 import gridPicTemplate from '../templates/gridPic.html'
 
 // change this genderFilter = "M", config url and h2 in main.html for female/male
-const genderFilter = "M";
+const genderFilter = "F";
 
 const spriteSlots = [
 {title:"Cosmopolitan",slot:1,publisher:"Hearst"},

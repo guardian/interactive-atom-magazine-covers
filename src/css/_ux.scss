@@ -1,0 +1,39 @@
+.expand-btn {
+    height: 30px;
+    width: 110px;
+    background: #222;
+    position: absolute;
+    bottom: 12px;
+    margin-top: 6px;
+    padding: 0 15px 0 7px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none !important;
+}
+
+.gv-icon--plus {
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    svg {
+        fill: #FFF;
+    }
+}
+
+.gv-button-label {
+    position: absolute;
+    height: 12px;
+    width: 80px;
+    top: 9px;
+    left: 24px;
+    color: #fff;
+    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 13px;
+    font-weight: 700px;
+}
+
+textarea,
+input,
+button {
+    outline: none;
+}
